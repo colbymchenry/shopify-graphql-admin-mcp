@@ -91,6 +91,22 @@ npx shopify-graphql-admin-mcp --store mystore.myshopify.com --client-id YOUR_ID 
 | `shopify_inventory_get_levels` | Get inventory levels across locations |
 | `shopify_inventory_adjust` | Adjust inventory quantity at a location |
 
+## Required API Scopes
+
+Configure these scopes on your app to enable all tools:
+
+| Scope | Tools |
+|-------|-------|
+| `read_products`, `write_products` | Products, inventory |
+| `read_metaobjects`, `write_metaobjects` | Metaobjects |
+| `read_content`, `write_content` | Metafields |
+| `read_customers`, `write_customers` | Customers |
+| `read_orders` | Orders |
+| `read_inventory`, `write_inventory` | Inventory adjustments |
+| `read_product_listings` | Product listings |
+
+You only need scopes for the tools you plan to use. At minimum for schema introspection and raw GraphQL to work, you need at least one read scope.
+
 ## Authentication
 
 ### OAuth Client Credentials (recommended)
@@ -98,7 +114,7 @@ npx shopify-graphql-admin-mcp --store mystore.myshopify.com --client-id YOUR_ID 
 For apps created in the [Shopify Dev Dashboard](https://partners.shopify.com):
 
 1. Create an app in the Dev Dashboard
-2. Configure Admin API scopes (e.g. `read_products`, `write_products`, `read_metaobjects`, `write_metaobjects`)
+2. Configure the Admin API scopes listed above
 3. Release a version and install the app on your store
 4. Use the Client ID and Client Secret:
 
