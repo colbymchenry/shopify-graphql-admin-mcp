@@ -1,0 +1,1 @@
+# shopify-graphql-admin-mcp
